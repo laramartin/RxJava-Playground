@@ -22,4 +22,10 @@ class RxJavaTest {
         assertEquals(42, test.values()[0])
     }
 
+    @Test
+    fun `data transformation`() {
+        Observable.just(5, 6, 7)
+                .map { ";-) ".repeat(it) }
+                .subscribe { println(it)}
+    }
 }
